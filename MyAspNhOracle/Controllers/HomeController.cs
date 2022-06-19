@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MyAspNhOracle.Manager;
 
 namespace MyAspNhOracle.Controllers
 {
@@ -11,11 +12,19 @@ namespace MyAspNhOracle.Controllers
     {
         public ActionResult Index()
         {
-            using (var session = NhibernateHelper.OpenSession())
+            //using (var session = NhibernateHelper.OpenSession())
+            //{
+            //var owners = session.Get<Owners>(3);
+            //Console.WriteLine(owners.Id + "-----" + owners.Name + "---" + owners.AddDate);
+            //Console.ReadKey();
+
+            //}
+            OwnersManager ownersManager = new OwnersManager();
+            int totalCount;
+            var ownersList = ownersManager.LoadByPage(2,2,out totalCount);
+            foreach (var item in ownersList)
             {
-                var owners = session.Get<Owners>(3);
-                Console.WriteLine(owners.Id + "-----" + owners.Name + "---" + owners.AddDate);
-                //Console.ReadKey();
+                Console.WriteLine(item.Id+"--"+item.Name);
             }
 
             return View();

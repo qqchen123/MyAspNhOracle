@@ -22,13 +22,18 @@ namespace MyAspNhOracle.Manager
 
         public ICollection<Owners> GetAllOwners()
         {
-            using (var session = NhibernateHelper.OpenSession())
-            {
-                var owners = session.Get<Owners>(3);
-                Console.WriteLine(owners.Id + "-----" + owners.Name + "---" + owners.AddDate);
-                //Console.ReadKey();
-            }
+            throw new NotImplementedException();
         }
+
+        //public ICollection<Owners> GetAllOwners()
+        //{
+        //    using (var session = NhibernateHelper.OpenSession())
+        //    {
+        //        var owners = session.Get<Owners>(3);
+        //        Console.WriteLine(owners.Id + "-----" + owners.Name + "---" + owners.AddDate);
+        //        //Console.ReadKey();
+        //    }
+        //}
 
         public Owners GetById(int id)
         {
@@ -43,7 +48,12 @@ namespace MyAspNhOracle.Manager
 
         public Owners GetByOwners(string name)
         {
+            throw new NotImplementedException();
         }
+
+        //public Owners GetByOwners(string name)
+        //{
+        //}
 
         public void Remove(Owners owners)
         {
@@ -51,6 +61,15 @@ namespace MyAspNhOracle.Manager
 
         public void Update(Owners owners)
         {
+        }
+
+        public IList<Owners> LoadByPage(int pageIndex, int pageSize, out int totalCount)
+        {
+            using (var session = NhibernateHelper.OpenSession())
+            {
+                totalCount = session.QueryOver<Owners>().RowCount();	//总条数
+                return session.QueryOver<Owners>().Skip((pageIndex - 1) * pageSize).Take(pageSize).List();
+            }
         }
 
         //public List<Owners> GetListByPage(int pageIndex, int pageSize)
