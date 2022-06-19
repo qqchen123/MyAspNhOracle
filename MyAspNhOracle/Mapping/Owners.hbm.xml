@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="MyAspNhOracle"
+                   namespace="MyAspNhOracle.Models">
+  <class name="Owners" table="T_OWNERS">
+    <id name="Id">
+      <column name="ID">
+      </column>
+    </id>
+    <property name="Name">
+      <column name="NAME" length="16"/>
+    </property>
+    <property name="AddressId" >
+      <column name="ADDRESSID" />
+    </property>
+    <property name="HouseNumber" >
+      <column name="HOUSENUMBER" />
+    </property>
+    <property name="WaterMeter" >
+      <column name="WATERMETER" />
+    </property>
+    <property name="AddDate" >
+      <column name="ADDDATE" />
+    </property>
+    <property name="OwnerTypeId" >
+      <column name="OWNERTYPEID" />
+    </property>
+  </class>
+</hibernate-mapping>
