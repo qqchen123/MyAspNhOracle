@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="MyAspNhOracle"
+                   namespace="MyAspNhOracle.Models">
+  <class name="ProjectInfo" table="TDMS_PROJECT_INFO">
+    <id name="ProId">
+      <column name="PRO_ID">
+      </column>
+    </id>
+    <property name="ProjectName">
+      <column name="PROJECT_NAME" length="16"/>
+    </property>
+    <property name="PMO" >
+      <column name="PMO" />
+    </property>
+    <property name="Sponsor" >
+      <column name="SPONSOR" />
+    </property>
+    <property name="Technology" >
+      <column name="TECHNOLOGY" />
+    </property>
+    <property name="Customer" >
+      <column name="CUSTOMER" />
+    </property>
+    <property name="Application" >
+      <column name="APPLICATION" />
+    </property>
+    <property name="KeyWords" >
+      <column name="KEY_WORDS" />
+    </property>
+    <property name="FilePath" >
+      <column name="FILE_PATH" />
+    </property>
+    <property name="IsDelete" >
+      <column name="IS_DELETE" />
+    </property>
+  </class>
+</hibernate-mapping>
