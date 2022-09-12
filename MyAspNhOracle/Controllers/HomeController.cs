@@ -45,3 +45,35 @@ namespace MyAspNhOracle.Controllers
         }
     }
 }
+
+
+
+//select t.month,
+//       Max(case
+//             when t.owneruuid = '1' then
+//              t.money
+//             else
+//              0
+//           end) as a,
+//       Max(case
+//             when t.owneruuid = '2' then
+//              t.money
+//             else
+//    0
+//           end) as b,
+//           Max(case
+//             when t.owneruuid = '1' then
+//              t.money
+//             else
+//    0
+//           end) -
+//       Max(case
+//             when t.owneruuid = '2' then
+//              t.money
+//             else
+//    0
+//           end) as c
+
+
+//  from T_ACCOUNT t
+// group by t.month order by t.month;
