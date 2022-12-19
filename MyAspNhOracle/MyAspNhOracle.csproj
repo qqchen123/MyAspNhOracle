@@ -171,12 +171,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DataTableToModelUtil.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Manager\Common.cs" />
     <Compile Include="Manager\IOwnersManager.cs" />
     <Compile Include="Manager\OwnersManager.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Owners.cs" />
     <Compile Include="Models\ProjectInfo.cs" />
     <Compile Include="NhibernateHelper.cs" />
