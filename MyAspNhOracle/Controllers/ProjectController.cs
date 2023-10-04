@@ -1,9 +1,4 @@
 ﻿using MyAspNhOracle.Models;
-using NHibernate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MyAspNhOracle.Controllers
@@ -30,6 +25,7 @@ namespace MyAspNhOracle.Controllers
             {
                 ProjectInfo projectInfo = session.Get<ProjectInfo>(3);
             }
+
             return View();
         }
 

@@ -1,10 +1,6 @@
-﻿using MyAspNhOracle.Models;
+﻿using MyAspNhOracle.Manager;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using MyAspNhOracle.Manager;
 
 namespace MyAspNhOracle.Controllers
 {
@@ -42,6 +38,12 @@ namespace MyAspNhOracle.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+
+        public ActionResult MyTest()
+        {
+            return Json("testsetstsetest");
         }
     }
 }
